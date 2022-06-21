@@ -1,18 +1,6 @@
-const menuElement = document.querySelector('#menu')
+// get element menu
 
-fetch('https://codice-boca.web.app/menu')
-  .then(response => response.json())
-  .then(menuItems => {
-    console.log(menuItems)
-    const menuCards = menuItems.map(recipe => {
-      console.log(recipe)
+// fetch the api and render all the menu items
 
-      return `<div class="menu-item">
-          <h3>${recipe.title}</h3>
-          <p>${recipe.description}</p>
-        </div>`
-    })
-    menuElement.innerHTML = menuCards.join('')
-  })
+// api => https://codice-boca.web.app/menu
 
-  .catch(error => console.error(error))
